@@ -1,835 +1,667 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Birmingham City FC, Social Audit 2026</title>
+<title>Birmingham City — Content Audit</title>
+<meta name="description" content="A channel by channel read of Birmingham City's social output, off-season 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --blue:#0b2ea0;
+  --blue-deep:#061c63;
+  --blue-ink:#04123f;
+  --paper:#f4f2ed;
+  --paper-warm:#eae7de;
+  --ink:#14161c;
+  --ink-soft:#4c505c;
+  --ink-faint:#878b96;
+  --line:#d8d4c8;
+  --accent:#ff4d17;
+  --white:#fff;
+  --display:'Bricolage Grotesque',sans-serif;
+  --body:'Newsreader',Georgia,serif;
+  --measure:33rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:1.075rem;
+  line-height:1.62;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1}
+.shell{width:100%;max-width:74rem;margin:0 auto;padding:0 clamp(1.15rem,4vw,3rem)}
 
-:root {
-  --accent:     #0000FF;
-  --accent-lt:  rgba(0, 0, 255, 0.08);
-  --accent-brd: rgba(0, 0, 255, 0.22);
-  --gold:       #C8A94A;
-  --header-bg:  #04061a;
-  --body-bg:    #ffffff;
-  --ink:        #111111;
-  --ink-mid:    #444444;
-  --ink-soft:   #777777;
-  --rule:       #e8e8e8;
-  --card-bg:    #fafafa;
-  --pos:        #15803d;
-  --neg:        #b45309;
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(244,242,237,.82);
+  backdrop-filter:blur(14px) saturate(1.3);
+  border-bottom:1px solid var(--line);
 }
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.5rem}
+.brand{font-family:var(--display);font-weight:800;font-size:.78rem;letter-spacing:.02em;text-transform:uppercase;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.brand i{width:.5rem;height:.5rem;border-radius:50%;background:var(--blue);display:block}
+.brand span{color:var(--ink-faint);font-weight:600}
+.nav-links{display:flex;gap:1.35rem}
+.nav-links a{
+  font-family:var(--display);font-size:.7rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+  padding:.2rem 0;border-bottom:1.5px solid transparent;transition:.2s;
+}
+.nav-links a:hover{color:var(--blue);border-bottom-color:var(--blue)}
+@media(max-width:640px){.nav-links{display:none}}
 
-html, body {
-  font-family: 'Inter', sans-serif;
-  background: var(--body-bg);
-  color: var(--ink);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+/* ---------- hero ---------- */
+header{padding:clamp(4rem,11vw,8.5rem) 0 clamp(3rem,6vw,4.5rem);position:relative;overflow:hidden}
+header::after{
+  content:"";position:absolute;right:-14%;top:-22%;width:44rem;height:44rem;border-radius:50%;
+  background:radial-gradient(circle,rgba(11,46,160,.11),transparent 66%);pointer-events:none;
 }
-
-.wrap { max-width: 860px; margin: 0 auto; }
-
-/* ── HEADER ── */
-.site-header {
-  background: var(--header-bg);
-  padding: 3rem 2.5rem 3rem;
-  position: relative;
-  overflow: hidden;
+.eyebrow{
+  font-family:var(--display);font-size:.68rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:1.6rem;
+  display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;
 }
-.site-header::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--accent);
+.eyebrow::before{content:"";width:2.2rem;height:1.5px;background:var(--blue);flex:none}
+h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(2.5rem,7.2vw,5.5rem);line-height:.94;letter-spacing:-.035em;
+  max-width:16ch;margin-bottom:1.8rem;
 }
-.header-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-.logo-block {
-  flex-shrink: 0;
-}
-.logo-block img {
-  width: 72px;
-  height: auto;
-  display: block;
-  filter: brightness(0) invert(1);
-}
-.header-text { flex: 1; }
-.header-eyebrow {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-.header-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.9rem, 4.5vw, 3rem);
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.05;
-  margin-bottom: 0.9rem;
-  letter-spacing: -0.02em;
-}
-.header-title em {
-  color: var(--accent);
-  font-style: normal;
-}
-.header-summary {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.75;
-  max-width: 560px;
-}
-.header-summary strong { color: rgba(255,255,255,0.85); font-weight: 500; }
-.header-meta {
-  margin-top: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-.meta-tag {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+h1 em{font-family:var(--body);font-style:italic;font-weight:300;color:var(--blue);letter-spacing:-.01em}
+.standfirst{font-size:clamp(1.15rem,2.1vw,1.4rem);max-width:var(--measure);color:var(--ink-soft);line-height:1.5}
+.caveat{
+  margin-top:2.6rem;padding:1.3rem 1.5rem;max-width:44rem;
+  border-left:2.5px solid var(--accent);background:rgba(255,77,23,.045);
+  font-size:.97rem;color:var(--ink-soft);
 }
 
-/* ── STAT STRIP ── */
-.stats-strip {
-  background: var(--accent);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-bottom: 1px solid rgba(0,0,255,0.3);
+/* ---------- section furniture ---------- */
+section{padding:clamp(3.5rem,7vw,6rem) 0;border-top:1px solid var(--line)}
+.sec-mark{
+  font-family:var(--display);font-size:.68rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-faint);margin-bottom:1.1rem;
 }
-@media (max-width: 500px) { .stats-strip { grid-template-columns: repeat(2, 1fr); } }
-.stat-cell {
-  padding: 1.1rem 1rem;
-  text-align: center;
-  border-right: 1px solid rgba(255,255,255,0.15);
+h2{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(1.85rem,4.2vw,3.1rem);line-height:1.02;letter-spacing:-.03em;
+  margin-bottom:1.5rem;max-width:20ch;
 }
-.stat-cell:last-child { border-right: none; }
-.stat-val {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1;
-  margin-bottom: 0.2rem;
+h2 em{font-family:var(--body);font-style:italic;font-weight:300;color:var(--blue)}
+.lede{font-size:1.1rem;max-width:var(--measure);color:var(--ink-soft);margin-bottom:2.6rem}
+
+/* ---------- thesis ---------- */
+.thesis{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20rem);
+  gap:clamp(2rem,4vw,4rem);align-items:start;
 }
-.stat-val.gold { color: var(--gold); }
-.stat-lbl {
-  font-size: 0.58rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
+@media(max-width:860px){.thesis{grid-template-columns:1fr}}
+.thesis p{margin-bottom:1.15rem;max-width:var(--measure)}
+.thesis p:last-child{margin-bottom:0}
+.pull{
+  background:var(--blue);color:var(--white);padding:1.8rem;
+  position:relative;overflow:hidden;
+}
+.pull::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);
+}
+.pull q{
+  font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.2;
+  letter-spacing:-.02em;quotes:none;display:block;margin-bottom:.9rem;
+}
+.pull small{
+  font-family:var(--display);font-size:.66rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;opacity:.68;line-height:1.5;display:block;
+}
+.pull-src{color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);display:inline-block;margin-top:.45rem;transition:.2s}
+.pull-src:hover{border-bottom-color:var(--accent);color:var(--accent)}
+
+/* ---------- snapshot grid ---------- */
+.snap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:2.8rem}
+@media(max-width:860px){.snap{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.snap{grid-template-columns:1fr}}
+.snap-cell{background:var(--paper);padding:1.6rem 1.35rem;transition:background .25s}
+.snap-cell:hover{background:var(--paper-warm)}
+.snap-cell b{
+  font-family:var(--display);font-size:.68rem;font-weight:800;letter-spacing:.1em;
+  color:var(--blue);display:block;margin-bottom:.85rem;
+}
+.snap-cell h4{font-family:var(--display);font-weight:600;font-size:1.02rem;letter-spacing:-.01em;margin-bottom:.5rem}
+.snap-cell p{font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+.read{border-top:1px solid var(--line);padding-top:2rem;max-width:var(--measure)}
+.read b{
+  font-family:var(--display);font-size:.68rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:.8rem;
+}
+.read p{font-size:1.18rem;line-height:1.5}
+
+/* ---------- channel accordions ---------- */
+.channels{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{
+  list-style:none;cursor:pointer;padding:1.5rem 0;
+  display:grid;grid-template-columns:2.9rem minmax(0,1fr) auto;gap:1.15rem;align-items:center;
+  transition:.2s;
+}
+summary::-webkit-details-marker{display:none}
+summary:hover{padding-left:.4rem}
+.glyph{
+  width:2.9rem;height:2.9rem;border:1.5px solid var(--ink);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:800;font-size:.78rem;letter-spacing:-.02em;
+  transition:.25s;flex:none;
+}
+details[open] .glyph{background:var(--blue);border-color:var(--blue);color:var(--white)}
+.ch-name{font-family:var(--display);font-weight:800;font-size:clamp(1.2rem,2.4vw,1.6rem);letter-spacing:-.025em;line-height:1.1}
+.ch-role{font-size:.9rem;color:var(--ink-faint);margin-top:.15rem}
+.plus{font-family:var(--display);font-size:1.5rem;color:var(--ink-faint);transition:transform .3s;line-height:1}
+details[open] .plus{transform:rotate(45deg);color:var(--blue)}
+.ch-body{padding:0 0 2.6rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,17rem);gap:clamp(1.5rem,3.5vw,3rem);align-items:start}
+@media(max-width:860px){.ch-body{grid-template-columns:1fr}}
+.ch-main{padding-left:4.05rem}
+@media(max-width:640px){.ch-main{padding-left:0}}
+.block{margin-bottom:1.7rem;max-width:var(--measure)}
+.block:last-child{margin-bottom:0}
+.block h5{
+  font-family:var(--display);font-size:.68rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:.55rem;
+}
+.block.warm h5{color:var(--accent)}
+.block p{margin-bottom:.7rem}
+.block p:last-child{margin-bottom:0}
+
+/* ---------- evidence cards ---------- */
+.ev{display:flex;flex-direction:column;gap:.6rem}
+.ev-label{
+  font-family:var(--display);font-size:.62rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-faint);margin-bottom:-.1rem;
+}
+.card{
+  display:block;text-decoration:none;color:inherit;
+  border:1px solid var(--line);background:var(--white);
+  padding:.85rem 1rem;transition:.2s;position:relative;
+}
+.card:hover{border-color:var(--blue);transform:translateX(3px)}
+.card b{font-family:var(--display);font-weight:600;font-size:.86rem;display:block;letter-spacing:-.01em;line-height:1.3}
+.card span{font-size:.78rem;color:var(--ink-faint);display:block;margin-top:.25rem;font-family:var(--display)}
+.card i{
+  position:absolute;top:.85rem;right:1rem;font-style:normal;
+  font-family:var(--display);font-size:.7rem;color:var(--ink-faint);
+}
+.card.todo{background:repeating-linear-gradient(-45deg,transparent,transparent 7px,rgba(11,46,160,.035) 7px,rgba(11,46,160,.035) 14px);border-style:dashed}
+.card.todo b{color:var(--ink-soft)}
+
+/* ---------- gaps ---------- */
+.gaps{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:760px){.gaps{grid-template-columns:1fr}}
+.gap{background:var(--paper);padding:1.9rem 1.6rem;transition:background .25s}
+.gap:hover{background:var(--white)}
+.gap b{
+  font-family:var(--display);font-size:.68rem;font-weight:800;letter-spacing:.08em;
+  color:var(--accent);display:block;margin-bottom:.9rem;
+}
+.gap h4{font-family:var(--display);font-weight:800;font-size:1.22rem;letter-spacing:-.02em;margin-bottom:.7rem;line-height:1.15}
+.gap p{font-size:.95rem;color:var(--ink-soft);margin-bottom:.7rem}
+.gap p:last-child{margin-bottom:0}
+.gap .tag{
+  font-family:var(--display);font-size:.66rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--blue);display:inline-block;margin-top:.3rem;
 }
 
-/* ── BODY ── */
-.body-wrap { padding: 3rem 2.5rem; }
+/* ---------- aside note ---------- */
+.note{
+  margin-top:2.6rem;padding:1.6rem 1.8rem;background:var(--blue-ink);color:rgba(255,255,255,.85);
+  max-width:46rem;
+}
+.note b{
+  font-family:var(--display);font-size:.66rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.7rem;
+}
+.note p{font-size:.98rem;margin-bottom:.7rem}
+.note p:last-child{margin-bottom:0}
 
-/* ── SECTION HEADING ── */
-.section-head {
-  margin-bottom: 1.5rem;
+/* ---------- close ---------- */
+footer{padding:clamp(3.5rem,7vw,6rem) 0 3rem;border-top:1px solid var(--line)}
+.close-h{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4.5vw,3rem);letter-spacing:-.03em;margin-bottom:1rem}
+.close-p{max-width:var(--measure);color:var(--ink-soft);margin-bottom:2.4rem;font-size:1.08rem}
+.sig{font-family:var(--display);font-weight:800;font-size:1.05rem;margin-bottom:1.1rem;letter-spacing:-.01em}
+.contact{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.contact a{
+  font-family:var(--display);font-size:.78rem;font-weight:600;text-decoration:none;
+  color:var(--ink);border:1px solid var(--line);padding:.5rem .9rem;background:var(--white);transition:.2s;
 }
-.section-eyebrow {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.35rem;
-}
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
+.contact a:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.fine{font-family:var(--display);font-size:.7rem;color:var(--ink-faint);line-height:1.6;border-top:1px solid var(--line);padding-top:1.6rem}
 
-/* ── DIVIDER ── */
-.divider {
-  height: 1px;
-  background: var(--rule);
-  margin: 2.5rem 0;
-}
-
-/* ── PLATFORM CARDS ── */
-.platform-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 0;
-}
-.plat-card {
-  border: 1px solid var(--rule);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-.plat-card.open {
-  border-color: var(--accent-brd);
-}
-.plat-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  cursor: pointer;
-  background: var(--card-bg);
-  user-select: none;
-  gap: 1rem;
-}
-.plat-card.open .plat-card-header {
-  background: var(--accent-lt);
-  border-bottom: 1px solid var(--accent-brd);
-}
-.plat-card-left {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-.plat-icon {
-  width: 32px; height: 32px;
-  border-radius: 7px;
-  background: var(--accent);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: white;
-  font-family: 'Syne', sans-serif;
-  letter-spacing: 0;
-}
-.plat-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--ink);
-}
-.plat-role-short {
-  font-size: 0.76rem;
-  color: var(--ink-soft);
-  margin-top: 0.05rem;
-}
-.plat-toggle {
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  border: 1.5px solid var(--rule);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--ink-soft);
-  font-size: 0.75rem;
-  flex-shrink: 0;
-  transition: all 0.2s;
-}
-.plat-card.open .plat-toggle {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: rotate(45deg);
-}
-.plat-card-body {
-  display: none;
-  padding: 1.25rem;
-  background: #ffffff;
-}
-.plat-card.open .plat-card-body { display: block; }
-
-/* body grid */
-.plat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem 2rem;
-}
-@media (max-width: 540px) { .plat-grid { grid-template-columns: 1fr; } }
-.plat-field-label {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.25rem;
-}
-.plat-field-val {
-  font-size: 0.81rem;
-  line-height: 1.65;
-  color: var(--ink-mid);
-}
-.plat-field-val strong { color: var(--ink); font-weight: 600; }
-.plat-field-val.pos { color: var(--pos); }
-.plat-field-val.neg { color: var(--neg); }
-.plat-evidence {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--rule);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-.ev-chip {
-  font-size: 0.68rem;
-  font-style: italic;
-  color: var(--ink-soft);
-  background: var(--accent-lt);
-  border: 1px solid var(--accent-brd);
-  padding: 0.2rem 0.65rem;
-  border-radius: 100px;
-}
-
-/* ── TWO COL LOWER ── */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-@media (max-width: 540px) { .two-col { grid-template-columns: 1fr; } }
-
-/* ── CARD ── */
-.card {
-  border: 1px solid var(--rule);
-  border-radius: 10px;
-  padding: 1.35rem;
-  background: var(--card-bg);
-}
-.card.accent-border { border-color: var(--accent-brd); border-top: 2.5px solid var(--accent); }
-.card-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 0.85rem;
-}
-.card-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-.card-list li {
-  font-size: 0.79rem;
-  line-height: 1.55;
-  color: var(--ink-mid);
-  padding-left: 1rem;
-  position: relative;
-}
-.card-list li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-size: 0.7rem;
-  top: 0.05rem;
-}
-.rec-item {
-  display: flex;
-  gap: 0.7rem;
-  align-items: flex-start;
-  margin-bottom: 0.65rem;
-}
-.rec-item:last-child { margin-bottom: 0; }
-.rec-num {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--accent);
-  flex-shrink: 0;
-  padding-top: 0.1rem;
-  min-width: 1.1rem;
-}
-.rec-text { font-size: 0.79rem; line-height: 1.6; color: var(--ink-mid); }
-.rec-text strong { color: var(--ink); font-weight: 600; }
-
-/* ── FUTURE BAND ── */
-.future-band {
-  background: var(--header-bg);
-  border-radius: 12px;
-  padding: 2rem;
-  border-left: 4px solid var(--accent);
-}
-.future-eyebrow {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-.future-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
-}
-.future-body {
-  font-size: 0.82rem;
-  line-height: 1.72;
-  color: rgba(255,255,255,0.55);
-}
-.future-body strong { color: rgba(255,255,255,0.85); font-weight: 500; }
-
-/* ── TAKEAWAY ── */
-.takeaway {
-  border: 1px solid var(--accent-brd);
-  border-left: 4px solid var(--accent);
-  border-radius: 10px;
-  padding: 1.35rem 1.5rem;
-  background: var(--accent-lt);
-}
-.takeaway-text {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-}
-.takeaway-text em { color: var(--accent); font-style: normal; }
-
-/* ── CONTACT ── */
-.contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rule);
-}
-.contact-link {
-  font-size: 0.75rem;
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-.contact-link:hover { color: var(--accent); }
-.contact-link b { color: var(--ink-mid); font-weight: 600; }
-
-@media (max-width: 560px) {
-  .body-wrap { padding: 2rem 1.25rem; }
-  .site-header { padding: 2rem 1.25rem; }
-  .header-inner { flex-direction: column; gap: 1.25rem; }
-}
+/* ---------- motion ---------- */
+.rise{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+.rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rise{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo-block">
-      <img src="https://upload.wikimedia.org/wikipedia/en/6/68/Birmingham_City_FC_logo.svg"
-           alt="Birmingham City FC"
-           onerror="this.outerHTML='<div style=\'width:72px;height:72px;border:2px solid rgba(255,255,255,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;\'><span style=\'font-family:Syne,sans-serif;font-size:1.6rem;font-weight:800;color:#fff\'>BC</span></div>'">
+<nav>
+  <div class="shell nav-in">
+    <a class="brand" href="#top"><i></i>BCFC Content Audit <span>&nbsp;Keagan Kurien</span></a>
+    <div class="nav-links">
+      <a href="#snapshot">Snapshot</a>
+      <a href="#audit">Channels</a>
+      <a href="#gaps">Where there's room</a>
+      <a href="#close">Close</a>
     </div>
-    <div class="header-text">
-      <div class="header-eyebrow">External Social Media Audit · May 2026 · Based on publicly visible posts and engagement signals</div>
-      <h1 class="header-title">Birmingham <em>City FC</em></h1>
-      <p class="header-summary">
-        Birmingham City are operating with a stronger brand narrative than at most points in recent memory. New ownership, a stadium project with the potential to transform East Birmingham, a 150th anniversary season, and a squad with genuine international reach. The social channels reflect some of that ambition, particularly on kit campaigns and fan-led content, but not consistently. <strong>The gap between BCFC's strongest social output and its average output is what this audit is concerned with.</strong>
-      </p>
+  </div>
+</nav>
 
+<header id="top">
+  <div class="shell">
+    <div class="eyebrow">Content audit · Off-season 2026</div>
+    <h1>The best thing on these feeds went <em>everywhere</em>.</h1>
+    <p class="standfirst">A channel by channel read of Birmingham City's current output, and the small number of things I'd still raise.</p>
+    <div class="caveat">
+      Everything here comes from public posts. It's an outside reading. I've no view of the calendar, the resourcing, the partner obligations, or why any single post went out the way it did. Where something looks like a gap, it may well be a decision I can't see from here.
     </div>
   </div>
 </header>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="stat-cell">
-    <div class="stat-val">327K</div>
-    <div class="stat-lbl">Instagram followers</div>
+<section id="snapshot">
+  <div class="shell">
+    <div class="sec-mark">01 — Snapshot</div>
+    <h2>What the feeds sound like.</h2>
+
+    <div class="thesis rise">
+      <div>
+        <p>A Championship club posted a clip of one of its players sliding stones across a table and it did 1.1 million likes. No badge in shot doing the work. No caption explaining the reference. Paik, a format the entire planet already knew, and a top comment that outperformed most club posts on its own.</p>
+        <p>That's the thing worth naming first, because it explains the rest. This account is quick on formats and it lets players be people inside them. The Netflix documentary bit ran on the Dael Fry unveiling while the format was still current. Mecha Chameleon has been and gone. Whoever is watching what's moving is watching properly, and the turnaround is fast enough to catch things before they curdle.</p>
+        <p>The other half of it is knowing when to stop. The humour is picked rather than constant, and there's a straight, sober register for the days that need one. Plenty of clubs choose a lane and stay in it. The ones that try both usually get the timing wrong.</p>
+      </div>
+      <div class="pull">
+        <q>1.1M</q>
+        <small>Likes on the Squid Game clip. 70.9K saves, 4,449 comments.<br><a class="pull-src" href="https://www.tiktok.com/@bcfc/video/7457930627455716640" target="_blank" rel="noopener">Watch it ↗</a></small>
+      </div>
+    </div>
+
+    <div class="snap rise" style="margin-top:2.8rem">
+      <div class="snap-cell">
+        <b>A</b>
+        <h4>Two registers, one voice</h4>
+        <p>Edged humour and straight club business off the same account, without either sounding put on.</p>
+      </div>
+      <div class="snap-cell">
+        <b>B</b>
+        <h4>Comments worked, not watched</h4>
+        <p>4,449 comments under one clip and a reply section that gets read. Most clubs post and leave.</p>
+      </div>
+      <div class="snap-cell">
+        <b>C</b>
+        <h4>Quick on formats</h4>
+        <p>Squid Game, the Netflix doc bit on the Dael Fry unveiling. On trends while they're still trends.</p>
+      </div>
+      <div class="snap-cell">
+        <b>D</b>
+        <h4>Player-led reach abroad</h4>
+        <p>Paik and Iwata pull attention from Korea and Japan that no campaign budget buys. The Squid Game clip is the proof.</p>
+      </div>
+    </div>
+
+    <div class="read rise">
+      <b>The read</b>
+      <p>I came into this expecting to find things to fix. Mostly I found a club already doing them, which is a more useful thing to be able to tell you than a list would have been.</p>
+    </div>
   </div>
-  <div class="stat-cell">
-    <div class="stat-val">420K</div>
-    <div class="stat-lbl">Facebook followers</div>
+</section>
+
+<section id="audit">
+  <div class="shell">
+    <div class="sec-mark">02 — The audit</div>
+    <h2>Channel by <em>channel</em>.</h2>
+    <p class="lede">Tap any channel to open it. Linked cards go to the post being talked about.</p>
+
+    <div class="channels rise">
+
+      <!-- INSTAGRAM -->
+      <details open>
+        <summary>
+          <div class="glyph">IG</div>
+          <div>
+            <div class="ch-name">Instagram</div>
+            <div class="ch-role">The shop window</div>
+          </div>
+          <div class="plus">+</div>
+        </summary>
+        <div class="ch-body">
+          <div class="ch-main">
+            <div class="block">
+              <h5>Current use</h5>
+              <p>Kit campaigns, matchday graphics, fan portraits, signings. The channel where the club looks most like itself.</p>
+            </div>
+            <div class="block">
+              <h5>What works</h5>
+              <p>The kit photography earns saves, which is the number worth watching here, because a save is someone deciding to come back to it. The Penguin flat-lay is the standard the rest of the feed gets measured against, and it's a high one.</p>
+              <p>The fan portrait pulled the most comments of anything I looked at. That's not a coincidence. Put a supporter in frame and the supporters turn up.</p>
+            </div>
+            <p>The Dael Fry unveiling is the clearest recent example of how fast this account moves. It ran the Netflix documentary format &mdash; player in a chair, caption over the top, the joke doing the work &mdash; on a signing announcement, while the format was still current. I had that written down as something to suggest. They'd already shipped it.</p>
+            </div>
+            <div class="block warm">
+              <h5>What feels underused</h5>
+              <p>The ordinary Tuesday. The voice that makes the account distinctive shows up on the big days and goes quiet between them, and the day-to-day graphics don't carry it the way the campaign work does. The feed has two speeds and you can see the join.</p>
+              <p>The fan portrait works and it happens when a good image happens to exist. As a strand people could expect, it'd do more.</p>
+            </div>
+          </div>
+          <div class="ev">
+            <div class="ev-label">Evidence</div>
+            <a class="card" href="https://www.instagram.com/p/DYxQC3DgN82/" target="_blank" rel="noopener">
+              <b>Penguin kit re-release</b>
+              <span>8,934 likes · 2,438 saves · May 2026</span>
+              <i>↗</i>
+            </a>
+            <a class="card" href="https://www.instagram.com/p/DYur-cbAKAT/" target="_blank" rel="noopener">
+              <b>Championship 26/27 fixtures</b>
+              <span>9,355 likes · 685 saves · May 2026</span>
+              <i>↗</i>
+            </a>
+            <a class="card" href="https://www.instagram.com/p/DY2EmpBt7eo/" target="_blank" rel="noopener">
+              <b>Fan portrait</b>
+              <span>1,555 likes · 32 comments · May 2026</span>
+              <i>↗</i>
+            </a>
+            <a class="card" href="https://www.instagram.com/p/DaVvg8REU3I/" target="_blank" rel="noopener">
+              <b>Dael Fry unveiling</b>
+              <span>Netflix doc format, run on a signing</span>
+              <i>↗</i>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <!-- X -->
+      <details>
+        <summary>
+          <div class="glyph">X</div>
+          <div>
+            <div class="ch-name">X / Twitter</div>
+            <div class="ch-role">Voice, not speed</div>
+          </div>
+          <div class="plus">+</div>
+        </summary>
+        <div class="ch-body">
+          <div class="ch-main">
+            <div class="block">
+              <h5>Current use</h5>
+              <p>Team news, results, kit reveals, reactive moments, the odd bit of needle.</p>
+            </div>
+            <div class="block">
+              <h5>What works</h5>
+              <p>Copy discipline. <em>Might be too hot</em> under a sun-bleached mural is the whole account at its best. Four words, trusts you to get it, doesn't explain itself. The posts that land don't over-write.</p>
+              <p>I'd flagged the in-game update volume as thin. I don't think that any more. Supporters get scores from FotMob and SofaScore notifications before a club account can type them, and they're watching the stream anyway. Chelsea's live cadence works because a global audience is refreshing their timeline for it; that isn't the same job. Posting less in-game and better around it looks like a call someone made on purpose, not a gap.</p>
+            </div>
+            <div class="block warm">
+              <h5>What feels underused</h5>
+              <p>Between fixtures the copy gets longer and more functional, which is the opposite of what makes the account good. X moves posts through replies and quotes, so the ones that leave a door open get dragged into other people's timelines. The short, dry register that works on matchday mostly stays there.</p>
+              <p>Somewhere in the feed there's a reply to a Villa fan mid-rant that just says <em>bro are u ok?</em> I couldn't find it again to link it, which is its own small problem. It's still the line I kept thinking about while writing this, and it's the account at its best: four words, no defensiveness, and it treats a bloke shouting into a comment box like a person rather than a moderation issue.</p>
+            </div>
+          </div>
+          <div class="ev">
+            <div class="ev-label">Evidence</div>
+            <a class="card" href="https://x.com/BCFC/status/2059266064958046374" target="_blank" rel="noopener">
+              <b>Royal Blue mural &mdash; "might be too hot"</b>
+              <span>2,356 likes · 32 shares · May 2026</span>
+              <i>↗</i>
+            </a>
+            <a class="card" href="https://x.com/BCFC/status/2059305709611716838" target="_blank" rel="noopener">
+              <b>Paik Seung-Ho, World Cup</b>
+              <span>1,612 likes · May 2026</span>
+              <i>↗</i>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <!-- TIKTOK -->
+      <details>
+        <summary>
+          <div class="glyph">TT</div>
+          <div>
+            <div class="ch-name">TikTok</div>
+            <div class="ch-role">The strongest channel they have</div>
+          </div>
+          <div class="plus">+</div>
+        </summary>
+        <div class="ch-body">
+          <div class="ch-main">
+            <div class="block">
+              <h5>Current use</h5>
+              <p>Player personality, skill clips, matchday reaction, creator collabs. Made for TikTok rather than dumped on it.</p>
+            </div>
+            <div class="block">
+              <h5>What works</h5>
+              <p>7.3M likes against 332K followers. The content is travelling well beyond the people who already follow, which is the only real reason to be on the platform.</p>
+              <p>The Squid Game clip is the best thing this club has ever posted on any channel. 1.1M likes, 70.9K saves, 4,449 comments. Paik at a table with a set of stones, a format the whole planet recognised, and no need to explain the joke to anyone. The top comment did 112.8K likes on its own, which is more than most club posts manage. That video has out-performed the entire rest of the feed by an order of magnitude and it cost a table, a backdrop and half an hour.</p>
+              <p>The pinned grid tells the same story. 9.6M, 9.7M and 11.5M views sitting at the top of the profile. This isn't a channel that gets lucky occasionally.</p>
+              <p>Then there's the creator work. The BNFreestyle collab put the stadium in front of an audience that had no reason to care about Blues beforehand. Mid-size creators, not names. That's recruitment rather than content, and it's the cheapest kind going.</p>
+            </div>
+            <div class="block warm">
+              <h5>What feels underused</h5>
+              <p>The Squid Game post proves something the rest of the feed doesn't act on often enough. It worked because it borrowed a format everyone already knew and let a player be a person inside it. No club branding doing the heavy lifting, no explanation. That's a repeatable idea, not a fluke, and it doesn't need a global TV phenomenon to work &mdash; only a format people recognise.</p>
+              <p>Blue Rising, The POWERHOUSE and Built In Birmingham are all named on the profile, but the TikTok cuts are thin next to what's on YouTube. The show has an audience; the vertical clips aren't yet the front door to it.</p>
+            </div>
+          </div>
+          <div class="ev">
+            <div class="ev-label">Evidence</div>
+            <a class="card" href="https://www.tiktok.com/@bcfc/video/7457930627455716640" target="_blank" rel="noopener">
+              <b>Squid Game challenge &mdash; Paik</b>
+              <span>1.1M likes · 70.9K saves · 4,449 comments</span>
+              <i>↗</i>
+            </a>
+            <a class="card" href="https://www.tiktok.com/@bnfreestyle/video/7643837189276765442" target="_blank" rel="noopener">
+              <b>BNFreestyle × stadium</b>
+              <span>6,574 likes · 93 shares</span>
+              <i>↗</i>
+            </a>
+            <a class="card" href="https://www.tiktok.com/@bcfc" target="_blank" rel="noopener">
+              <b>Channel totals</b>
+              <span>332K followers · 7.3M likes · July 2026</span>
+              <i>↗</i>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <!-- FACEBOOK -->
+      <details>
+        <summary>
+          <div class="glyph">f</div>
+          <div>
+            <div class="ch-name">Facebook</div>
+            <div class="ch-role">The biggest room, quietest voice</div>
+          </div>
+          <div class="plus">+</div>
+        </summary>
+        <div class="ch-body">
+          <div class="ch-main">
+            <div class="block">
+              <h5>Current use</h5>
+              <p>Results, kit, commercial posts, mostly carried across from elsewhere.</p>
+            </div>
+            <div class="block">
+              <h5>What works</h5>
+              <p>It's the largest audience the club has, and the comment threads are alive in a way they aren't everywhere else. Reach here comes through shares into personal feeds, and the posts people share tend to be the warm ones. Heritage, faces, anything that says <em>look at this</em> rather than <em>here is the news</em>.</p>
+            </div>
+            <div class="block warm">
+              <h5>What feels underused</h5>
+              <p>Cross-posting isn't a sin. Cross-posting <em>everything</em> means the biggest audience the club has gets a version of the club that was written for someone else, in a room where the sharing behaviour is completely different.</p>
+              <p>This is also the audience most likely to remember 150 years of it. Heritage travels here in a way it doesn't on TikTok, and it turns up occasionally rather than as a habit.</p>
+            </div>
+          </div>
+          <div class="ev">
+            <div class="ev-label">Evidence</div>
+            <a class="card" href="https://www.facebook.com/BCFCofficial/" target="_blank" rel="noopener">
+              <b>Channel scale</b>
+              <span>c. 420,000 followers · largest raw audience</span>
+              <i>↗</i>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <!-- YOUTUBE -->
+      <details>
+        <summary>
+          <div class="glyph">YT</div>
+          <div>
+            <div class="ch-name">YouTube</div>
+            <div class="ch-role">A proper show, free to watch</div>
+          </div>
+          <div class="plus">+</div>
+        </summary>
+        <div class="ch-body">
+          <div class="ch-main">
+            <div class="block">
+              <h5>Current use</h5>
+              <p>Blue Rising, an episodic magazine show, plus long-form films and campaign work.</p>
+            </div>
+            <div class="block">
+              <h5>What works</h5>
+              <p>Blue Rising is the thing. Episode 15 premiered in November and has done 403,000 views. Kerys Harrop as a guest, extended highlights from the 150th anniversary game against Norwich and the Women's Second City Derby, Lee Carsley on the England Under-21s, and On Your Shed Son returning as a segment.</p>
+              <p>Two things there matter more than the view count. It's <em>numbered</em>, which means people know where they are in it. And it has returning segments, which only makes sense if an audience is expecting them. Most Championship clubs upload highlights and press conferences. This is a show, and it's free.</p>
+              <p>Booking a Blues Women legend as a guest on the main channel show is the other thing worth naming. It treats the women's side as part of the club's story rather than a separate feed to be serviced.</p>
+            </div>
+            <div class="block warm">
+              <h5>What feels underused</h5>
+              <p>A show this good should be recruiting on the platforms where people find things. The vertical channels carry a Blue Rising playlist but not much of the show itself, and a 400,000-view episode is a lot of material to leave sitting in one place.</p>
+              <p>Thumbnails are the small one. Different fonts, different crops, no family resemblance down the grid, which makes an episodic series harder to recognise in a sidebar. That's a template rather than a strategy question.</p>
+            </div>
+          </div>
+          <div class="ev">
+            <div class="ev-label">Evidence</div>
+            <a class="card" href="https://www.youtube.com/watch?v=TM95xz1bcEk" target="_blank" rel="noopener">
+              <b>Blue Rising, Episode 15</b>
+              <span>402,970 views · premiered 27 Nov 2025</span>
+              <i>↗</i>
+            </a>
+            <a class="card" href="https://www.youtube.com/@BCFC/videos" target="_blank" rel="noopener">
+              <b>Channel</b>
+              <span>Blue Rising · films · campaign work</span>
+              <i>↗</i>
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <!-- LINKEDIN -->
+      <details>
+        <summary>
+          <div class="glyph">in</div>
+          <div>
+            <div class="ch-name">LinkedIn</div>
+            <div class="ch-role">The commercial room</div>
+          </div>
+          <div class="plus">+</div>
+        </summary>
+        <div class="ch-body" style="grid-template-columns:1fr">
+          <div class="ch-main">
+            <div class="block">
+              <h5>Current use</h5>
+              <p>Hiring posts, commercial announcements, occasional infrastructure news.</p>
+            </div>
+            <div class="block">
+              <h5>What works</h5>
+              <p>When a post connects with the right room it travels. The Social Media Creator vacancy did 27,800 impressions once it was amplified on X. The audience is there when there's a reason to be.</p>
+            </div>
+            <div class="block warm">
+              <h5>What feels underused</h5>
+              <p>Knighthead, the Sports Quarter, the stadium. It's a better B2B story than most Championship clubs have and it isn't being told here. I'd hold this one loosely though, because LinkedIn output is often driven by comms and commercial rather than social, and I can't see who owns it from outside.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div>
   </div>
-  <div class="stat-cell">
-    <div class="stat-val">323K</div>
-    <div class="stat-lbl">TikTok followers</div>
+</section>
+
+<section id="gaps">
+  <div class="shell">
+    <div class="sec-mark">03 — Where there's room</div>
+    <h2>One note, two <em>openings</em>.</h2>
+    <p class="lede">This list started longer. Most of it went, because the club had already done it.</p>
+
+    <div class="gaps rise">
+
+      <div class="gap" style="grid-column:1/-1">
+        <b>/ 01</b>
+        <h4>Mecha Chameleon: hide it worse</h4>
+        <p>Blues have run this one. So has half the league. The format is a small white figure hidden somewhere in frame and everyone hunts for it, and most versions treat it as a puzzle. Chelsea's is the clearest example of the problem: the figure is hidden so well that finding it becomes work, and work isn't funny.</p>
+        <p>The laugh is in the placement, not the difficulty. Standing on the halfway line. Sat in the dugout with its legs crossed. Next to the kitman like it's staff. Creators worked this out ages ago, which is why their versions travel further than the clubs'. It's a decision made at the shoot, costs nothing, and it suits this account's sense of humour better than the puzzle version does.</p>
+        <span class="tag">Adjustment, not a pitch</span>
+      </div>
+
+      <div class="gap">
+        <b>/ 02</b>
+        <h4>Creators, as a programme</h4>
+        <p>BNFreestyle worked because the club went to someone else's audience instead of waiting for it. Mid-size creators are the right call. Big enough to bring a crowd, small enough to actually turn up and enjoy it, and they make things that look like their own channel rather than an ad.</p>
+        <p>One-offs are a tactic. A standing slot with a handful of them is a route into audiences that have no reason to know Blues exist. Of everything on this page, it's the one I'd call a genuine gap rather than a preference.</p>
+        <span class="tag">Extends: BNFreestyle</span>
+      </div>
+
+      <div class="gap">
+        <b>/ 03</b>
+        <h4>Blue Rising, travelling further</h4>
+        <p>A free, numbered show doing 400,000 views an episode is the biggest asset on any of these channels, and the vertical feeds carry almost none of it. Whether that's rights, edit time or someone's already got it on a list, I can't see from here.</p>
+        <p>Raising it anyway, because it's the widest gap between what exists and how many people meet it.</p>
+        <span class="tag">Extends: Blue Rising</span>
+      </div>
+
+    <div class="note rise">
+      <b>Where this read was wrong</b>
+      <p>Three things I had down as gaps in May and don't any more, listed together because the corrections say more about the club than the original notes did.</p>
+      <p><strong>In-game cadence on X.</strong> I'd marked the volume as thin. Supporters get scores from FotMob and SofaScore before a club account can type them, and they're watching the stream anyway. Posting less in-game is a call someone made, not an oversight.</p>
+      <p><strong>Formats.</strong> I had the Netflix documentary bit written down as a suggestion. It ran on the Dael Fry unveiling before I'd finished the sentence. Same with Mecha Chameleon.</p>
+      <p><strong>Recurring series.</strong> I'd written that nothing on TikTok had a name or a slot. There are three named playlists on the profile and a numbered show on YouTube with returning segments.</p>
+      <p>None of those corrections came from the feeds alone. They came from looking harder, or from being told.</p>
+    </div>
   </div>
-  <div class="stat-cell">
-    <div class="stat-val gold">6.8M</div>
-    <div class="stat-lbl">TikTok total likes</div>
+</section>
+
+<footer id="close">
+  <div class="shell">
+    <h2 class="close-h">What I'd want to learn next.</h2>
+    <p class="close-p">This is an off-season read and that's the honest limit of it. A proper audit runs a season, and half the things I'd flagged in May turned out to be decisions rather than gaps. The in-game cadence on X. The formats I thought were missing and weren't. Every one of those corrections came from looking harder or being told, and none came from the feeds alone.</p>
+    <p class="close-p">Which is the actual argument for being in the room. I can read output from outside and I've shown that here, including the parts where it caught me out. What I can't see is the calendar, the constraints, or what a matchday costs to run. I'd like to, and I'd rather earn that by being useful on one than by writing another page about it.</p>
+    <div class="sig">Keagan Kurien</div>
+    <div class="contact">
+      <a href="mailto:keagan05@gmail.com">Email · keagan05@gmail.com</a>
+      <a href="tel:07827846103">Phone · 07827 846103</a>
+      <a href="https://linkedin.com/in/keagankurien">LinkedIn · keagankurien</a>
+      <a href="https://instagram.com/true.blueballer">Football · @true.blueballer</a>
+    </div>
+    <div class="fine">
+      An independent audit based on publicly visible content. Not affiliated with Birmingham City FC.<br>
+      Birmingham City · Content Audit · Keagan Kurien · 2026
+    </div>
   </div>
+</footer>
+
 </div>
-
-<div class="body-wrap">
-
-  <!-- PLATFORM ANALYSIS -->
-  <div class="section-head">
-    <div class="section-eyebrow">Platform analysis</div>
-    <div class="section-title">Six platforms. One brand. Tap to expand each assessment.</div>
-  </div>
-
-  <div class="platform-list">
-
-    <!-- INSTAGRAM -->
-    <div class="plat-card" onclick="toggleCard(this)">
-      <div class="plat-card-header">
-        <div class="plat-card-left">
-          <div class="plat-icon" style="background:transparent;display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-g" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig-g)"/><circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8" fill="none"/><circle cx="17.2" cy="6.8" r="1.2" fill="white"/></svg></div>
-          <div>
-            <div class="plat-name">Instagram</div>
-            <div class="plat-role-short">Primary brand channel · 327,000 followers</div>
-          </div>
-        </div>
-        <div class="plat-toggle">+</div>
-      </div>
-      <div class="plat-card-body">
-        <div class="plat-grid">
-          <div>
-            <div class="plat-field-label">Performance</div>
-            <div class="plat-field-val">Based on the posts reviewed, the strongest content earns serious engagement. The Penguin re-release: <strong>8,934 likes and 2,438 saves</strong>. The Championship 26/27 fixture graphic: <strong>9,355 likes and 685 saves</strong>. The fan portrait: <strong>1,555 likes and 32 comments</strong>, the highest comment count among the posts sampled. Saves and comments are stronger indicators of content quality than likes alone.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Brand voice</div>
-            <div class="plat-field-val">At its best, short and specific. "It is well hot" on a sun-bleached mural image is the right register: it trusts the audience and says less than it could. The gap is that this voice shows up on the big days and disappears the rest of the week.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Visual identity</div>
-            <div class="plat-field-val">Royal blue is well-established as the visual anchor. Kit photography is genuinely strong, the Penguin flat-lay is the standard. Day-to-day graphics do not consistently meet it. The feed has two speeds and the gap between them is visible.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">What's working</div>
-            <div class="plat-field-val pos">Kit photography earns saves. Fan content earns comments. Campaign output stands up against top-flight clubs.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">What could improve</div>
-            <div class="plat-field-val neg">Reels frequency is inconsistent. Day-to-day graphics fall below campaign standard. Fan stories appear occasionally, not as a regular, named format.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Fix</div>
-            <div class="plat-field-val">Set a brief for three things: a weekly fan story format, a consistent Reels schedule, and a visual template for international call-up content. None require additional budget. They require editorial discipline and a standing content brief.</div>
-          </div>
-        </div>
-        <div class="plat-evidence">
-          <span class="ev-chip">Penguin kit, 8,934 likes · 2,438 saves</span>
-          <span class="ev-chip">Fixture graphic, 9,355 likes · 685 saves</span>
-          <span class="ev-chip">Fan portrait, 1,555 likes · 32 comments (highest on feed)</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- X/TWITTER -->
-    <div class="plat-card" onclick="toggleCard(this)">
-      <div class="plat-card-header">
-        <div class="plat-card-left">
-          <div class="plat-icon" style="background:#000000;display:flex;align-items:center;justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L2.25 2.25h6.894l4.261 5.636 4.839-5.636Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
-          <div>
-            <div class="plat-name">X / Twitter</div>
-            <div class="plat-role-short">Matchday and reactive channel · highest impression volume</div>
-          </div>
-        </div>
-        <div class="plat-toggle">+</div>
-      </div>
-      <div class="plat-card-body">
-        <div class="plat-grid">
-          <div>
-            <div class="plat-field-label">Performance</div>
-            <div class="plat-field-val">Impression volume is the most visible signal on X from the posts reviewed. The Royal Blue mural post reached <strong>2,356 likes and 32 shares</strong>. The "Together" season graphic hit <strong>173,000 impressions</strong>. The Paik World Cup post earned <strong>1,612 likes</strong>. These figures suggest the content is reaching beyond the immediate follower base on stronger posts, though without full analytics access the precise reach breakdown is not confirmed.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Brand voice</div>
-            <div class="plat-field-val">Three words on the right image outperforms three sentences on the wrong one every time. "It is well hot" is the standard. The posts that land do not explain themselves. Between the big moments, the copy gets longer, more functional, and less distinctive.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Content themes</div>
-            <div class="plat-field-val">Match updates · squad news · results · reactive cultural moments · kit reveals · Paik Seung-Ho World Cup content.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Gap</div>
-            <div class="plat-field-val neg">Personality-led content and reactive cultural commentary appear largely absent outside of matchday, based on the posts reviewed. Clubs that tend to perform well on X maintain a more consistent voice across the week rather than concentrating energy on matchday alone. The copy discipline evident in the strongest posts does not consistently carry through the full week.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Opportunity</div>
-            <div class="plat-field-val">One non-matchday post per day with a standing brief to be short, specific, and in voice. The "Birmingham, on the rise" positioning gives the account a clear point of view to write from, which is not yet being used consistently between fixtures.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Fix</div>
-            <div class="plat-field-val">Brief the content team on a daily non-matchday post with a two-line limit. No exceptions. The template should be: observation or reaction, one emoji, no explanation. Review weekly against the impression data to see what format is pulling.</div>
-          </div>
-        </div>
-        <div class="plat-evidence">
-          <span class="ev-chip">Royal Blue mural, 2,356 likes · 32 shares</span>
-          <span class="ev-chip">"Together" graphic, 173,000 impressions</span>
-          <span class="ev-chip">Paik World Cup, 1,612 likes</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- TIKTOK -->
-    <div class="plat-card" onclick="toggleCard(this)">
-      <div class="plat-card-header">
-        <div class="plat-card-left">
-          <div class="plat-icon" style="background:#010101;display:flex;align-items:center;justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" fill="white"/></svg></div>
-          <div>
-            <div class="plat-name">TikTok</div>
-            <div class="plat-role-short">Fastest-growing channel · 323K followers · 6.8M total likes · 21:1 ratio</div>
-          </div>
-        </div>
-        <div class="plat-toggle">+</div>
-      </div>
-      <div class="plat-card-body">
-        <div class="plat-grid">
-          <div>
-            <div class="plat-field-label">Performance</div>
-            <div class="plat-field-val">The 21:1 likes-to-follower ratio is a strong engagement signal relative to the other channels in the portfolio. The BNFreestyle stadium collab earned <strong>6,574 likes and 93 shares</strong>. This ratio suggests content is reaching beyond the existing follower base with some regularity, which is an encouraging indicator for a channel at this stage of growth.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Brand voice</div>
-            <div class="plat-field-val">Looser, more human, and more platform-native than any other channel in the portfolio. Player personality content lands here in a way it does not on Instagram. The club appears to understand TikTok as a distinct format rather than treating it as a repost destination.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Content themes</div>
-            <div class="plat-field-val">Player Q&As, skill clips, matchday reaction, creator collabs. The BNFreestyle collab showed what happens when the stadium is used as a canvas for external creators. The audience it reached had no prior BCFC interest. That is audience acquisition, not just content.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Gap</div>
-            <div class="plat-field-val neg">No recurring weekly series format is visible from the posts reviewed. Without a consistent content strand, growth is more likely to come in engagement spikes rather than sustained follower accumulation. Thumbnail identity also appears inconsistent, which may reduce click-through in the For You feed. Both are likely addressable without additional budget.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Opportunity</div>
-            <div class="plat-field-val">A named weekly format, consistent posting day, and a thumbnail template system would provide a more reliable structure for follower growth. Extending the creator collab programme beyond one-offs, along the lines of the BNFreestyle approach, appears to be a low-cost route to reaching audiences outside the existing fanbase.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Fix</div>
-            <div class="plat-field-val">Consider commissioning regular creator collabs using the BNFreestyle approach as a reference point. Establishing a consistent posting rhythm and a thumbnail template system in the club colours are production-level decisions that do not require additional creative resource.</div>
-          </div>
-        </div>
-        <div class="plat-evidence">
-          <span class="ev-chip">BNFreestyle collab, 6,574 likes · 93 shares</span>
-          <span class="ev-chip">21:1 likes-per-follower ratio</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- FACEBOOK -->
-    <div class="plat-card" onclick="toggleCard(this)">
-      <div class="plat-card-header">
-        <div class="plat-card-left">
-          <div class="plat-icon" style="background:#1877F2;display:flex;align-items:center;justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="white"/></svg></div>
-          <div>
-            <div class="plat-name">Facebook</div>
-            <div class="plat-role-short">Largest raw audience · 420,000 followers · heritage and commercial reach</div>
-          </div>
-        </div>
-        <div class="plat-toggle">+</div>
-      </div>
-      <div class="plat-card-body">
-        <div class="plat-grid">
-          <div>
-            <div class="plat-field-label">Performance</div>
-            <div class="plat-field-val">420,000 followers is the largest raw audience across the channels reviewed. Organic reach on Facebook has declined industry-wide, so the follower count reflects brand presence more than active engagement rate. The commercial value here is likely sponsor visibility to the club's broadest demographic rather than content performance in the traditional sense.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Brand voice</div>
-            <div class="plat-field-val">Broadcast-led. The club posts, supporters respond, the club does not re-enter the conversation. Comment threads are active and passionate, which makes the one-way communication more noticeable.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Content themes</div>
-            <div class="plat-field-val">Match results, kit announcements, commercial content. Heritage content appears occasionally and performs well when it does. Longer video is better suited to this platform than any other in the portfolio but is not being used strategically.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Gap</div>
-            <div class="plat-field-val neg">Based on the posts reviewed, content appears largely cross-posted from X and Instagram rather than written for Facebook's specific audience. The older supporter demographic that Facebook tends to skew towards does not appear to be served with heritage storytelling, long-form video, or community content built with that audience in mind.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Opportunity</div>
-            <div class="plat-field-val">A monthly heritage feature, archive photography, legendary players, major moments from 150 years of history, costs almost nothing to produce and is exactly what this audience wants. Longer-form video should be Facebook-first, not repurposed from YouTube.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Fix</div>
-            <div class="plat-field-val">Briefing one heritage post per month specifically for Facebook would be a low-cost starting point. Responding to the top comments on each post within 24 hours is a minimal but visible signal that the audience is actively managed, which has value both for community trust and for demonstrating engagement to commercial partners.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- YOUTUBE -->
-    <div class="plat-card" onclick="toggleCard(this)">
-      <div class="plat-card-header">
-        <div class="plat-card-left">
-          <div class="plat-icon" style="background:#FF0000;display:flex;align-items:center;justify-content:center;"><svg width="19" height="19" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="white"/></svg></div>
-          <div>
-            <div class="plat-name">YouTube</div>
-            <div class="plat-role-short">Brand film and long-form channel</div>
-          </div>
-        </div>
-        <div class="plat-toggle">+</div>
-      </div>
-      <div class="plat-card-body">
-        <div class="plat-grid">
-          <div>
-            <div class="plat-field-label">Performance</div>
-            <div class="plat-field-val">YouTube is structurally constrained by the Blues+ paywall, which limits the volume of free content available to build algorithmic momentum. Where flagship content exists, the quality is high. The 150th anniversary film and the LA-shot Global kit campaign would hold up against top-flight output. The problem is frequency, not quality.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Brand voice</div>
-            <div class="plat-field-val">Documentary and editorial when given the space. The best content on the channel tells a story rather than just covering an event. That instinct needs a consistent format to live in.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Visual identity</div>
-            <div class="plat-field-val">Thumbnail consistency is weak. Different fonts, compositions, and colour treatments across the channel reduce brand recognition in search and in the recommendation feed. A single thumbnail template system would fix this immediately.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Gap</div>
-            <div class="plat-field-val neg">No recurring series to drive habitual viewership. Between flagship films, the channel does not give audiences a reason to return on a fixed schedule. The paywall is a structural constraint, but the editorial gap is a strategic choice that can be changed.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Opportunity</div>
-            <div class="plat-field-val">The new stadium represents a significant long-form content opportunity. A club documenting its own build, from planning through construction to opening day, would have a compelling PR narrative and years of milestone content. Few Championship clubs have a comparable story to tell. Building the audience now, before the build begins, would maximise the momentum when the bigger milestones arrive.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Fix</div>
-            <div class="plat-field-val">A thumbnail template system applied consistently across the channel would improve discoverability at minimal cost. A recurring monthly free series, whether behind-the-scenes, academy features, or matchday documentaries, would give the channel a more reliable content rhythm alongside the paywalled material.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LINKEDIN -->
-    <div class="plat-card" onclick="toggleCard(this)">
-      <div class="plat-card-header">
-        <div class="plat-card-left">
-          <div class="plat-icon" style="background:#0A66C2;display:flex;align-items:center;justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="white"/></svg></div>
-          <div>
-            <div class="plat-name">LinkedIn</div>
-            <div class="plat-role-short">B2B and commercial channel · ~24,000 followers</div>
-          </div>
-        </div>
-        <div class="plat-toggle">+</div>
-      </div>
-      <div class="plat-card-body">
-        <div class="plat-grid">
-          <div>
-            <div class="plat-field-label">Performance</div>
-            <div class="plat-field-val">Around 24,000 followers, which is below the potential for a club with this commercial narrative. The December 2025 Social Media Creator vacancy post was amplified on X and reached <strong>27,800 impressions</strong>, showing that the right LinkedIn content does travel when it connects with a relevant audience.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Brand voice</div>
-            <div class="plat-field-val">Professional but underused based on the public-facing posts reviewed. No consistent editorial programme around the transformation narrative that appears to be driving the wider brand. The Knighthead story, the Sports Quarter vision, and the new stadium plans represent comparatively strong B2B content for a Championship club. From what is publicly visible, none of it is being told in a structured way on this channel.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Content themes</div>
-            <div class="plat-field-val">Hiring posts, commercial announcements, occasional infrastructure news. The channel functions as a job board and press release feed rather than as a commercial brand platform.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Gap</div>
-            <div class="plat-field-val neg">No executive thought leadership or strategic narrative is visible from the public posts reviewed. The transformation story that appears to drive the broader brand is largely absent on this channel. It is reasonable to assume that potential sponsors and commercial partners may research a club's LinkedIn presence before entering conversations, making this an underdeveloped commercial touchpoint.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Opportunity</div>
-            <div class="plat-field-val">Monthly posts from club leadership on the stadium project, the Sports Quarter development, and the Knighthead vision could generate sponsor interest before formal conversations begin. Few Championship clubs appear to be using LinkedIn in this way, which suggests a potential early-mover advantage, though the commercial impact would depend on execution and targeting.</div>
-          </div>
-          <div>
-            <div class="plat-field-label">Fix</div>
-            <div class="plat-field-val">Briefing club leadership on a small number of LinkedIn posts per year tied to stadium and Sports Quarter milestones would be a practical starting point. Assigning a content owner to the channel rather than treating it as a scheduling task would make a visible difference to the quality and consistency of what goes out.</div>
-          </div>
-        </div>
-        <div class="plat-evidence">
-          <span class="ev-chip">Vacancy post, 27,800 impressions on X when amplified</span>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /platform-list -->
-
-  <div class="divider"></div>
-
-  <!-- STANDARDS + RECS -->
-  <div class="two-col">
-    <div>
-      <div class="section-head">
-        <div class="section-eyebrow">Standards</div>
-        <div class="section-title">The editorial standard this audit is measured against</div>
-      </div>
-      <div class="card accent-border">
-        <ul class="card-list">
-          <li>Copy written for the platform it lives on. What works on X does not work on Instagram.</li>
-          <li>Supporter stories on a fixed weekly schedule, not published when a good image happens to exist</li>
-          <li>Kit and product photography that earns saves, not just likes</li>
-          <li>TikTok content built natively for TikTok with a consistent posting rhythm</li>
-          <li>International player content with a visual template that builds global reach between tournaments</li>
-          <li>LinkedIn and Facebook treated as distinct channels with their own briefs, not as overflow from other platforms</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <div class="section-head">
-        <div class="section-eyebrow">Recommendations</div>
-        <div class="section-title">Four changes with the highest commercial and audience impact</div>
-      </div>
-      <div class="card">
-        <div class="rec-item">
-          <div class="rec-num">01</div>
-          <div class="rec-text"><strong>Codify the short-copy standard into a standing brief.</strong> BCFC already knows what good looks like. The Penguin post, the Royal Blue mural, the "Together" graphic. Turn that into a written brief that governs every caption, every day of the week.</div>
-        </div>
-        <div class="rec-item">
-          <div class="rec-num">02</div>
-          <div class="rec-text"><strong>Commission a weekly supporter story series with a fixed format and name.</strong> The fan portrait post earned the highest comment count on the feed. Comments are where real community exists. A weekly series with a consistent format turns that into a reliable engagement and loyalty driver.</div>
-        </div>
-        <div class="rec-item">
-          <div class="rec-num">03</div>
-          <div class="rec-text"><strong>Build a visual template for international player content and use it every call-up window.</strong> BCFC have players representing Korea, Poland, and Japan at international level. Each one is a route into a fanbase that has no prior connection to a Championship club. A consistent format and posting cadence turns reactive coverage into a global audience strategy.</div>
-        </div>
-        <div class="rec-item">
-          <div class="rec-num">04</div>
-          <div class="rec-text"><strong>Begin the stadium documentary series now, not when the build starts.</strong> The planning stage, the community consultation, the renderings, the vision. A club that documents the full journey from planning to opening day could build a meaningfully larger audience before the stadium opens. That kind of audience growth, if sustained, would carry commercial value for naming rights conversations, kit sponsors, and local business partners.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- FUTURE BAND -->
-  <div class="section-head">
-    <div class="section-eyebrow">Looking ahead</div>
-    <div class="section-title">The new stadium changes the content ambition entirely</div>
-  </div>
-  <div class="future-band">
-    <div class="future-eyebrow">Powerhouse Stadium · 62,000 seats · East Birmingham</div>
-    <div class="future-title">The stadium project is a major content asset with strong long-term potential. It is not yet being fully used.</div>
-    <div class="future-body">
-      Few Championship clubs have a comparable infrastructure story to tell. A club that tells it well, from community consultation through to opening day, has the basis for a documentary series, a compelling sponsorship narrative, and years of milestone content. <strong>Building the audience before the build begins gives that content far greater reach when the major moments arrive.</strong> LinkedIn is where the strategic and commercial story belongs. YouTube is where the documentary series lives. X handles the real-time milestones. The content framework should be in place well before the build starts.
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- TAKEAWAY -->
-  <div class="takeaway">
-    <div class="takeaway-text">The raw material is strong. A new stadium in planning, a 150th anniversary, a squad with genuine international interest, and a fanbase that engages when the content is right. Based on what is publicly visible, the channels are not yet converting that consistently into sustained social growth. <em>That is the opportunity this audit is pointing at.</em></div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="contact-row">
-    <a class="contact-link" href="mailto:keagan05@gmail.com"><b>Email</b> keagan05@gmail.com</a>
-    <a class="contact-link" href="tel:07827846103"><b>Phone</b> 07827 846103</a>
-    <a class="contact-link" href="https://linkedin.com/in/keagankurien" target="_blank"><b>LinkedIn</b> keagankurien</a>
-    <a class="contact-link" href="https://instagram.com/true.blueballer" target="_blank"><b>Football</b> @true.blueballer</a>
-  </div>
-
-</div><!-- /body-wrap -->
-</div><!-- /wrap -->
-
 <script>
-function toggleCard(card) {
-  const wasOpen = card.classList.contains('open');
-  document.querySelectorAll('.plat-card').forEach(c => c.classList.remove('open'));
-  if (!wasOpen) card.classList.add('open');
-}
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rise').forEach(el=>io.observe(el));
+document.querySelectorAll('.card.todo').forEach(c=>c.addEventListener('click',e=>e.preventDefault()));
 </script>
 </body>
 </html>
